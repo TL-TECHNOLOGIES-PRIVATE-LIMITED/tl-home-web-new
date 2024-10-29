@@ -14,3 +14,26 @@
 		width: 200px; /* Even smaller width for small screens */
 	}
 }
+
+
+
+/* map */
+
+
+.map-container {
+	position: relative;
+	padding-bottom: 100%; /* Creates a square aspect ratio */
+	overflow: hidden;
+}
+
+@media (max-width: 991px) {
+	.map-container {
+		padding-bottom: 75%; /* Adjusts aspect ratio for smaller screens */
+	}
+}
+
+@media (max-width: 767px) {
+	.map-container {
+		padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+	}
+}
