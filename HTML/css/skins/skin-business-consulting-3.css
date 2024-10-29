@@ -6,23 +6,23 @@
 }
 /* Skin Colors */
 :root {
-	--primary: #f20000;
-	--primary-100: #d90000;
-	--primary-200: #cc0000;
-	--primary-300: #bf0000;
-	--primary--100: #ff0d0d;
-	--primary--200: #ff1919;
-	--primary--300: #ff2626;
-	--primary-rgba-0: rgba(242, 0, 0, 0);
-	--primary-rgba-10: rgba(242, 0, 0, 0.1);
-	--primary-rgba-20: rgba(242, 0, 0, 0.2);
-	--primary-rgba-30: rgba(242, 0, 0, 0.3);
-	--primary-rgba-40: rgba(242, 0, 0, 0.4);
-	--primary-rgba-50: rgba(242, 0, 0, 0.5);
-	--primary-rgba-60: rgba(242, 0, 0, 0.6);
-	--primary-rgba-70: rgba(242, 0, 0, 0.7);
-	--primary-rgba-80: rgba(242, 0, 0, 0.8);
-	--primary-rgba-90: rgba(242, 0, 0, 0.9);
+	--primary: #a80000;
+	--primary-100: #8f0000;
+	--primary-200: #820000;
+	--primary-300: #750000;
+	--primary--100: #c20000;
+	--primary--200: #ce0000;
+	--primary--300: #db0000;
+	--primary-rgba-0: rgba(168, 0, 0, 0);
+	--primary-rgba-10: rgba(168, 0, 0, 0.1);
+	--primary-rgba-20: rgba(168, 0, 0, 0.2);
+	--primary-rgba-30: rgba(168, 0, 0, 0.3);
+	--primary-rgba-40: rgba(168, 0, 0, 0.4);
+	--primary-rgba-50: rgba(168, 0, 0, 0.5);
+	--primary-rgba-60: rgba(168, 0, 0, 0.6);
+	--primary-rgba-70: rgba(168, 0, 0, 0.7);
+	--primary-rgba-80: rgba(168, 0, 0, 0.8);
+	--primary-rgba-90: rgba(168, 0, 0, 0.9);
 	--secondary: #e36159;
 	--secondary-100: #df4c43;
 	--secondary-200: #dd4238;
@@ -131,47 +131,4 @@
 	--grey-800: #a8a8a8;
 	--grey-900: #8e8e8e;
 	--grey-1000: #757575;
-}
-
-.less-error-message ul, .less-error-message li {
-	list-style-type: none;
-	margin-right: 15px;
-	padding: 4px 0;
-	margin: 0;
-}
-
-.less-error-message label {
-	font-size: 12px;
-	margin-right: 15px;
-	padding: 4px 0;
-	color: #cc7777;
-}
-
-.less-error-message pre {
-	color: #dd6666;
-	padding: 4px 0;
-	margin: 0;
-	display: inline-block;
-}
-
-.less-error-message pre.line {
-	color: #ff0000;
-}
-
-.less-error-message h3 {
-	font-size: 20px;
-	font-weight: bold;
-	padding: 15px 0 5px 0;
-	margin: 0;
-}
-
-.less-error-message a {
-	color: #10a;
-}
-
-.less-error-message .error {
-	color: red;
-	font-weight: bold;
-	padding-bottom: 2px;
-	border-bottom: 1px dashed red;
 }
