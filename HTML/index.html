@@ -48,7 +48,14 @@
 
 	</head>
 
-	<body data-plugin-cursor-effect>
+	<body data-plugin-cursor-effect  class="loading-overlay-showing" data-loading-overlay data-plugin-options="{'hideDelay': 500, 'effect': 'zenith'}">
+		<div class="loading-overlay">
+			<div class="bounce-loader">
+				<div class="cssload-zenith-container">
+					<div class="cssload-zenith"></div>
+				</div>
+			</div>
+		</div>
 		<div class="body">
 			<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 85}">
 				<div class="header-body border-top-0">
@@ -336,8 +343,8 @@
 									<div class="d-flex">
 										<img width="63" height="63" src="img/demos/business-consulting-3/icons/label.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'd-lg-none d-xl-block'}" />
 										<span class="text-3 font-weight-bold text-color-dark pt-2 ms-2">
-											<strong class="d-block font-weight-bold text-9 mb-2">240+</strong>
-											Finished Projects
+											<strong class="d-block font-weight-bold text-10 mb-2">240+</strong>
+											Projects
 										</span>
 									</div>
 								</div>
@@ -359,7 +366,7 @@
 						<div class="col appear-animation" data-appear-animation="fadeInUpShorter"
 							data-appear-animation-delay="250">
 							<div class="owl-carousel owl-theme carousel-center-active-item custom-carousel-vertical-center-items custom-dots-style-1"
-								data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 3}, '768': {'items': 3}, '992': {'items': 5}, '1200': {'items': 5}, '1600': {'items': 5}}, 'autoplay': false, 'autoplayTimeout': 3000, 'dots': true}">
+								data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 3}, '768': {'items': 3}, '992': {'items': 5}, '1200': {'items': 5}, '1600': {'items': 5}}, 'autoplay': true, 'autoplayTimeout': 4000, 'dots': true}">
 								<div class="text-center">
 									<img class="d-inline-block img-fluid" src="img/logos/SCF Logo png@4x.png" alt=""
 										style="max-width: 90px;" />
@@ -602,7 +609,10 @@
 							</div> -->
 						</div>
 						<div class="col-lg-5">
-							<img src="img/demos/business-consulting-3/generic/generic-4.jpg" class="img-fluid" alt="" />
+							<img src="./img/demos/business-consulting-3/generic/sangi-001.JPG"
+								class="img-fluid box-shadow-5 appear-animation"
+								data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="700"
+								alt="" />
 						</div>
 					</div>
 				</div>
