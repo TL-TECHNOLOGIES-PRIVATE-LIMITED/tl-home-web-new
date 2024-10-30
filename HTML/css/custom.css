@@ -37,3 +37,10 @@
 		padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
 	}
 }
+
+
+/* footer */
+
+.hover-text-white:hover {
+    color: white !important;
+}
