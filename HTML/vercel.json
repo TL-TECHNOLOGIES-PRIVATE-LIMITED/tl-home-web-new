@@ -1,5 +1,9 @@
 {
+  "rewrites": [
+    { "source": "/", "destination": "/html/index.html" }
+  ],
   "routes": [
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/html/404.html" }
   ]
 }
