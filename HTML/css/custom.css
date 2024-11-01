@@ -76,3 +76,16 @@
     flex-wrap: wrap;
     align-items: center;
 }
+/* custom media query */
+
+/* @media (max-width: 2289px) {
+	.custom-text-background {
+		font-size: 8rem !important;
+	}
+} */
+
+/* @media (max-width: 2117px) {
+	.custom-text-background {
+		font-size: 7.5rem !important;
+	}
+} */
