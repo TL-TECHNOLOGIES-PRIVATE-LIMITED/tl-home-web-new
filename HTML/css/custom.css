@@ -52,8 +52,8 @@
 
 .text-gray-150{
 	/* color: #c60000; */
-	/* color: #5a5a5a; */
-    font-weight: 500;
+	color: #5a5a5a !important;
+    font-weight: 700;
 }
 
 
