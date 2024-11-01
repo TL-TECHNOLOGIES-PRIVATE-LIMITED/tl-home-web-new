@@ -1,18 +1,23 @@
 .custom-font-size-1 {
 		font-size: 0.6em;
 }
-
+/* 1200-6  1600-8.5 */
 @media (min-width: 1200px) {
 		.custom-big-font-size-1 {
-				font-size: 6rem !important;
+				font-size: 5rem !important;
 		}
 }
 
 @media (min-width: 1600px) {
 		.custom-big-font-size-1 {
-				font-size: 8.5rem !important;
+				font-size: 7rem !important;
 		}
 }
+/* @media (min-width: 1500px) {
+		.custom-big-font-size-1 {
+				font-size: 6rem !important;
+		}
+} */
 
 .custom-blockquote-style-1 {
 		border-left-width: 12px;
