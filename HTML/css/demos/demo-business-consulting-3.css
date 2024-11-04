@@ -8,7 +8,7 @@
 		}
 }
 
-@media (min-width: 1780px) {
+@media (min-width: 1844px) {
 		.custom-big-font-size-1 {
 				font-size: 7rem !important;
 		}
@@ -388,4 +388,35 @@
 
 .custom-accordion-style-1 > .card:hover .card-header a.collapsed {
 		color: var(--primary) !important;
+}
+
+/* Add smaller screen size first */
+@media (min-width: 992px) {
+		.custom-big-font-size-1 {
+				font-size: 4rem !important;
+		}
+}
+
+@media (min-width: 1200px) {
+		.custom-big-font-size-1 {
+				font-size: 4.5rem !important;
+		}
+}
+
+@media (min-width: 1400px) {
+		.custom-big-font-size-1 {
+				font-size: 5rem !important;
+		}
+}
+
+@media (min-width: 1600px) {
+		.custom-big-font-size-1 {
+				font-size: 6rem !important;
+		}
+}
+
+@media (min-width: 1844px) {
+		.custom-big-font-size-1 {
+				font-size: 7rem !important;
+		}
 }
