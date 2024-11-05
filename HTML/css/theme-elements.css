@@ -13603,6 +13603,18 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 	transition: ease-out all .08s .010s;
 }
 
+/* Cursor Styles */
+.cursor-outer-wrap {
+    background-color: rgba(255, 255, 255, 0.1);
+    mix-blend-mode: difference;
+}
+
+.cursor-outer-magnetic {
+    background: transparent !important;
+    border: 2px solid #CCC !important;
+    transition: transform 0.2s ease-out;
+}
+
 .cursor-outer.cursor-outer-fit {
 	left: 0 !important;
 	top: 0 !important;

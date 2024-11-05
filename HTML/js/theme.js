@@ -2859,41 +2859,84 @@ window.theme.fn = {
 			});
 
 			self.isStuck = false;
-			$('[data-cursor-effect-hover]').on('mouseenter', function(e){
+			$("[data-cursor-effect-hover]").on("mouseenter", function (e) {
+        // Identify Event With Hover Class
+        $cursorOuter.addClass("cursor-outer-hover");
+        $cursorInner.addClass("cursor-inner-hover");
 
-				// Identify Event With Hover Class
-				$cursorOuter.addClass('cursor-outer-hover');
-				$cursorInner.addClass('cursor-inner-hover');
+        // Hover Color
+        const hoverColor = $(this).data("cursor-effect-hover-color");
+        $cursorOuter.addClass("cursor-color-" + hoverColor);
+        $cursorInner.addClass("cursor-color-" + hoverColor);
 
-				// Hover Color
-				const hoverColor = $(this).data('cursor-effect-hover-color');
-				$cursorOuter.addClass( 'cursor-color-' + hoverColor );
-				$cursorInner.addClass( 'cursor-color-' + hoverColor );
+        // Effect Types
+        switch ($(this).data("cursor-effect-hover")) {
+          case "fit":
+            const thisBox = $(this)[0].getBoundingClientRect();
 
-				// Effect Types
-				switch ( $(this).data('cursor-effect-hover') ) {
-					case 'fit':
-						const thisBox = $(this)[0].getBoundingClientRect();
+            self.clientX = thisBox.x;
+            self.clientY = thisBox.y;
 
-						self.clientX = thisBox.x;
-						self.clientY = thisBox.y;
+            $cursorOuter
+              .css({
+                width: thisBox.width,
+                height: thisBox.height,
+                "border-radius": $(this).css("border-radius"),
+              })
+              .addClass("cursor-outer-fit");
 
-						$cursorOuter.css({
-							width: thisBox.width,
-							height: thisBox.height,
-							'border-radius': $(this).css('border-radius')
-						}).addClass('cursor-outer-fit');
+            $cursorInner.addClass("opacity-0");
 
-						$cursorInner.addClass('opacity-0');
+            self.isStuck = true;
+            break;
+          // Add new wrap effect
+        //   case "wrap":
+        //     const textBox = $(this)[0].getBoundingClientRect();
+        //     const padding = 10; // Padding around the text
 
-						self.isStuck = true;
-						break;
+        //     self.clientX = textBox.x - padding;
+        //     self.clientY = textBox.y - padding;
 
-					case 'plus':
-						$cursorInner.addClass('cursor-inner-plus');
-						break;
-				}
-			});
+        //     $cursorOuter
+        //       .css({
+        //         width: textBox.width + padding * 2,
+        //         height: textBox.height + padding * 2,
+        //         "border-radius": "30px",
+        //         transition: "all 0.2s ease-out",
+        //       })
+        //       .addClass("cursor-outer-wrap");
+
+        //     $cursorInner.addClass("opacity-0");
+
+        //     self.isStuck = true;
+        //     break;
+		// 	case 'magnetic': {
+		// 		const $this = $(this);
+		// 		const magneticStrength = 0.4;
+			
+		// 		$this.on('mousemove.magnetic', function(e) {
+		// 			const bounds = this.getBoundingClientRect();
+		// 			const centerX = bounds.left + (bounds.width / 2);
+		// 			const centerY = bounds.top + (bounds.height / 2);
+					
+		// 			const deltaX = e.clientX - centerX;
+		// 			const deltaY = e.clientY - centerY;
+			
+		// 			// Move the element
+		// 			$this.css('transform', `translate(${deltaX * magneticStrength}px, ${deltaY * magneticStrength}px)`);
+					
+		// 			// Move cursor
+		// 			$cursorOuter.addClass('cursor-outer-magnetic')
+		// 				.css('transform', `translate(${deltaX * 0.1}px, ${deltaY * 0.1}px) scale(1.5)`);
+		// 		});
+		// 		break;
+		// 	}
+
+          	case "plus":
+            $cursorInner.addClass("cursor-inner-plus");
+            break;
+        }
+      });
 
 			$('[data-cursor-effect-hover]').on('mouseleave', function(){
 				
@@ -2919,6 +2962,38 @@ window.theme.fn = {
 
 						self.isStuck = false;
 						break;
+						// wrap effect
+						// case 'wrap':
+						// 	$cursorOuter.css({
+						// 		width: initialCursorOuterBox.width,
+						// 		height: initialCursorOuterBox.height,
+						// 		'border-radius': initialCursorOuterRadius,
+						// 		'transition': 'all 0.2s ease-out'
+						// 	}).removeClass('cursor-outer-wrap');
+				
+						// 	$cursorInner.removeClass('opacity-0');
+				
+						// 	self.isStuck = false;
+						// 	break;
+						// 	case 'magnetic': {
+						// 		const $this = $(this);
+								
+						// 		// Smoothly reset position
+						// 		$this.css('transition', 'transform 0.3s ease-out')
+						// 			.css('transform', 'translate(0, 0)')
+						// 			.off('mousemove.magnetic');
+								
+						// 		// Reset cursor
+						// 		$cursorOuter.removeClass('cursor-outer-magnetic')
+						// 			.css('transform', '');
+									
+						// 		// Remove transition after animation completes
+						// 		setTimeout(() => {
+						// 			$this.css('transition', '');
+						// 		}, 300);
+						// 		break;
+						// 	}
+							
 
 					case 'plus':
 						$cursorInner.removeClass('cursor-inner-plus');
