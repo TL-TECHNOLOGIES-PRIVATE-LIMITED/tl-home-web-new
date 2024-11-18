@@ -39,27 +39,6 @@ There are many ways/formats of how to use linea-ecommerce. The fastest and recom
 ...
 <link rel="stylesheet" href="@icon/linea-ecommerce/linea-ecommerce.css">
 ...
-<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-	
-			gtag('config', 'G-SV6518T078', {
-				'page_path': window.location.pathname
-			});
-		</script>
-	
-		<!-- Optional: Custom Event Tracking -->
-		<script>
-			// Example of custom event tracking
-			function trackButtonClick() {
-				gtag('event', 'button_click', {
-					'event_category': 'engagement',
-					'event_label': 'homepage_cta'
-				});
-			}
-		</script>
-
 </head>
 ```
 
@@ -70,27 +49,6 @@ There are many ways/formats of how to use linea-ecommerce. The fastest and recom
 ...
 <link rel="stylesheet" href="https://unpkg.com/@icon/linea-ecommerce/linea-ecommerce.css">
 ...
-<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-	
-			gtag('config', 'G-SV6518T078', {
-				'page_path': window.location.pathname
-			});
-		</script>
-	
-		<!-- Optional: Custom Event Tracking -->
-		<script>
-			// Example of custom event tracking
-			function trackButtonClick() {
-				gtag('event', 'button_click', {
-					'event_category': 'engagement',
-					'event_label': 'homepage_cta'
-				});
-			}
-		</script>
-
 </head>
 ```
 
