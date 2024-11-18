@@ -39,60 +39,15 @@ There are many ways/formats of how to use linea-arrows. The fastest and recommen
 ...
 <link rel="stylesheet" href="@icon/linea-arrows/linea-arrows.css">
 ...
-<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-	
-			gtag('config', 'G-SV6518T078', {
-				'page_path': window.location.pathname
-			});
-		</script>
-	
-		<!-- Optional: Custom Event Tracking -->
-		<script>
-			// Example of custom event tracking
-			function trackButtonClick() {
-				gtag('event', 'button_click', {
-					'event_category': 'engagement',
-					'event_label': 'homepage_cta'
-				});
-			}
-		</script>
 
-</head>
-```
 
  2 . Use [unpkg.com][Unpkg] to load directly linea-arrows without installing anything:
 
-```
 <head>
 ...
 <link rel="stylesheet" href="https://unpkg.com/@icon/linea-arrows/linea-arrows.css">
 ...
-<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-	
-			gtag('config', 'G-SV6518T078', {
-				'page_path': window.location.pathname
-			});
-		</script>
-	
-		<!-- Optional: Custom Event Tracking -->
-		<script>
-			// Example of custom event tracking
-			function trackButtonClick() {
-				gtag('event', 'button_click', {
-					'event_category': 'engagement',
-					'event_label': 'homepage_cta'
-				});
-			}
-		</script>
 
-</head>
-```
 
 > Place linea-arrows with `<i>` tag in your html like this. Icon class names are to be used with the `lar` class prefix.
 
