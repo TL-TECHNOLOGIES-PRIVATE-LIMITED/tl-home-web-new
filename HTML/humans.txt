@@ -1,20 +1,26 @@
 /* THANKS */
-TO OUR TL TECHNOLOGIES TEAM MEMBERS
-CONNECT WITH US : connect.tltechnologies.net
+To our dedicated TL Technologies team members for your hard work and commitment to innovation.
+
+/* CONNECT WITH US */
+Website: https://www.tltechnologies.net
+Contact Portal: https://connect.tltechnologies.net
 
 /* TEAM */
-CEO:Sangeetha C Gopalakrishnan ( Sangi)
-Contact: sangig@tltechnologies.net
-CONNECT WITH US : connect.tltechnologies.net
-Location India/USA, Trivandrum
+CEO: Sangeetha C Gopalakrishnan (Sangi)  
+Email: sangig@tltechnologies.net  
+Location: Trivandrum, India / USA  
 
+Full Stack Developers:  
+- Murthasa Ali  
+- Gurudas  
+- Thasleem  
 
-CTO: Abhilash Thomas ( Abhi)
-Contact:Abhilasht@tltechnologies.net
-CONNECT WITH US : connect.tltechnologies.net
-Location :Dubai
+HR Administrator: Silpa Binny  
 
+Graphic Designer: Venkat  
 
-Full stack Developer: Murthasa Ali, Gurudas, Thasleem
-HR Administrator: Silpa Binny
-Graphic Designer: Venkat
+/* MISSION */
+At TL Technologies, we strive to innovate, transform, and enable our clients to succeed through cutting-edge digital solutions and exceptional teamwork.
+
+/* COPYRIGHT */
+© TL Technologies. All Rights Reserved.
