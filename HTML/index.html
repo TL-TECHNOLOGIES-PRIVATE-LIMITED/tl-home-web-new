@@ -166,18 +166,18 @@
 			});
 		}
 	</script>
+	
+
+
 
 </head>
 
 <body data-plugin-cursor-effect class="loading-overlay-showing" data-loading-overlay
 	data-plugin-options="{'hideDelay': 500, 'effect': 'zenith'}">
-	<div class="loading-overlay">
-		<div class="bounce-loader">
-			<div class="cssload-zenith-container">
-				<div class="cssload-zenith"></div>
-			</div>
-		</div>
-	</div>
+	<div class="loading-overlay d-flex flex-column justify-content-center align-items-center vh-100">
+		<l-miyagi size="70" stroke="5" speed="1.5" color="#a80000"></l-miyagi>
+		<h1 id="loading-title" class="mt-3 fw-medium   ">TL TECHNOLOGIES</h1>
+	  </div>
 
 	<div id="cookieConsent" class="d-none">
 		<div class="container cookieConsentContainer">
@@ -380,12 +380,11 @@
 			<section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0"
 				data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '120%'}"
 				data-image-src="img/demos/business-consulting-3/backgrounds/background-1.jpg">
-				
+
 				<!-- Add max-width and right positioning to image -->
 				<img src="img/demos/business-consulting-3/backgrounds/Sangi-3.png"
 					class="img-fluid position-absolute top-0 d-none d-md-block appear-animation"
-					data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100" 
-					alt=""
+					data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100" alt=""
 					style="max-width: 40%; right: 2%;" />
 
 				<div class="container pb-5 pb-xl-0 mt-md-3 mb-5">
@@ -652,11 +651,11 @@
 							</div>
 							<div class="text-center">
 								<img class="d-inline-block img-fluid" src="img/logos/web-karpulselogo-124-80.png" alt=""
-								style="max-width: 140px;" />
+									style="max-width: 140px;" />
 							</div>
 							<div class="text-center">
 								<img class="d-inline-block img-fluid" src="img/logos/web-karreplogo-124-80.png" alt=""
-								style="max-width: 140px;" />
+									style="max-width: 140px;" />
 							</div>
 							<div class="text-center">
 								<img class="d-inline-block img-fluid" src="img/logos/bizface.jpg" alt=""
@@ -706,8 +705,8 @@
 					<div class="row row-gutter-sm justify-content-center mb-5 appear-animation"
 						data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
 						<div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-							<a href="services/digital-marketing.html" class="custom-link-hover-effects text-decoration-none"
-								data-cursor-effect-hover="plus">
+							<a href="services/digital-marketing.html"
+								class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
 								<div class="card box-shadow-4">
 									<div class="card-img-top position-relative overlay overlay-show">
 										<div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -735,8 +734,8 @@
 							</a>
 						</div>
 						<div class="col-sm-9 col-md-6 col-lg-4 mb-4">
-							<a href="services/software-development.html" class="custom-link-hover-effects text-decoration-none"
-								data-cursor-effect-hover="plus">
+							<a href="services/software-development.html"
+								class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
 								<div class="card box-shadow-4">
 									<div class="card-img-top position-relative overlay overlay-show">
 										<div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -820,8 +819,8 @@
 							</a>
 						</div>
 						<div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0">
-							<a href="services/ecommerce-solutions.html" class="custom-link-hover-effects text-decoration-none"
-								data-cursor-effect-hover="plus">
+							<a href="services/ecommerce-solutions.html"
+								class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
 								<div class="card box-shadow-4">
 									<div class="card-img-top position-relative overlay overlay-show">
 										<div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -849,8 +848,8 @@
 							</a>
 						</div>
 						<div class="col-sm-9 col-md-6 col-lg-4">
-							<a href="services/mobile-app-development.html" class="custom-link-hover-effects text-decoration-none"
-								data-cursor-effect-hover="plus">
+							<a href="services/mobile-app-development.html"
+								class="custom-link-hover-effects text-decoration-none" data-cursor-effect-hover="plus">
 								<div class="card box-shadow-4">
 									<div class="card-img-top position-relative overlay overlay-show">
 										<div class="position-absolute bottom-0 left-0 w-100 py-3 px-4 z-index-3">
@@ -1569,6 +1568,8 @@
 
 	<!-- Theme Custom -->
 	<script src="js/custom.js"></script>
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/miyagi.js"></script>
 
 	<!-- Theme Initialization Files -->
 	<script src="js/theme.init.js"></script>

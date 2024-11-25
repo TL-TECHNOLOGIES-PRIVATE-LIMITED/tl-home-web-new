@@ -108,13 +108,10 @@
 
 <body data-plugin-cursor-effect class="loading-overlay-showing" data-loading-overlay
 	data-plugin-options="{'hideDelay': 500, 'effect': 'zenith'}">
-	<div class="loading-overlay">
-		<div class="bounce-loader">
-			<div class="cssload-zenith-container">
-				<div class="cssload-zenith"></div>
-			</div>
-		</div>
-	</div>
+	<div class="loading-overlay d-flex flex-column justify-content-center align-items-center vh-100">
+		<l-miyagi size="70" stroke="5" speed="1.5" color="#a80000"></l-miyagi>
+		<h1 id="loading-title" class="mt-3 fw-medium   ">TL TECHNOLOGIES</h1>
+	  </div>
 	<div class="body">
 		<header id="header" class="header-effect-shrink"
 			data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 85}">
@@ -652,6 +649,8 @@
 
 	<!-- Theme Initialization Files -->
 	<script src="../js/theme.init.js"></script>
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/miyagi.js"></script>
 
 	<!-- Google Maps -->
 	<script>
