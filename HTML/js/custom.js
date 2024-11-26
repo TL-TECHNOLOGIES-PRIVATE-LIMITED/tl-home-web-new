@@ -22,8 +22,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    const h1 = document.querySelector('#loading-title');
-    h1.classList.add('visible');
-});
