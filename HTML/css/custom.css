@@ -93,10 +93,7 @@
 
 
 #loading-title {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 300ms ease-in-out;
 }
 
-#loading-title.visible {
-    opacity: 1;
-}
