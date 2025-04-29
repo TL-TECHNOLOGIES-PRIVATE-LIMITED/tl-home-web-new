@@ -12,12 +12,12 @@ Location: Trivandrum, India / USA
 
 Full Stack Developers:  
 - Murthasa Ali  
-- Gurudas  
-- Thasleem  
+- Arjun  
+- Dasarath  
 
-HR Administrator: Silpa Binny  
+HR Administrator: 
 
-Graphic Designer: Venkat  
+Graphic Designer: Heba  
 
 /* MISSION */
 At TL Technologies, we strive to innovate, transform, and enable our clients to succeed through cutting-edge digital solutions and exceptional teamwork.
