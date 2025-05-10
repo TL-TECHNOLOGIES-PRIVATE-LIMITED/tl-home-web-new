@@ -631,7 +631,601 @@
 					</div>
 				</div>
 			</footer>
+			<style>
+				body {
+					font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+					margin: 0;
+					padding: 0;
+					background-color: #f5f5f5;
+				}
+				
+				.chat-container {
+					position: fixed;
+					bottom: 20px;
+					right: 20px;
+					width: 380px;
+					box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+					border-radius: 10px;
+					overflow: hidden;
+					z-index: 1000;
+				}
+				
+				.chat-header {
+					background-color: #a80000;
+					color: white;
+					padding: 15px;
+					font-weight: bold;
+					cursor: pointer;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
+				
+				.chat-box {
+					height: 400px;
+					overflow-y: auto;
+					background-color: white;
+					padding: 15px;
+				}
+				
+				.chat-input {
+					display: flex;
+					border-top: 1px solid #e0e0e0;
+					background-color: white;
+					padding: 10px;
+				}
+				
+				#user-input {
+					flex: 1;
+					border: 1px solid #e0e0e0;
+					border-radius: 20px;
+					padding: 8px 15px;
+					outline: none;
+				}
+				
+				#send-btn {
+					background-color: #a80000;
+					color: white;
+					border: none;
+					border-radius: 20px;
+					padding: 8px 15px;
+					margin-left: 10px;
+					cursor: pointer;
+				}
+				
+				.message {
+					margin-bottom: 10px;
+					max-width: 90%;
+					padding: 8px 15px;
+					border-radius: 10px;
+					word-wrap: break-word;
+				}
+				
+				.bot-message {
+					background-color: #f1f0f0;
+					color: #333;
+					float: left;
+					clear: both;
+				}
+				
+				.user-message {
+					background-color: #a80000;
+					color: white;
+					float: right;
+					clear: both;
+				}
+				
+				.chat-bubble {
+					width: 60px;
+					height: 60px;
+					background-color: #a80000;
+					border-radius: 50%;
+					position: fixed;
+					bottom: 20px;
+					right: 20px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+					z-index: 999;
+					display: none; /* Hidden by default since chat opens automatically */
+				}
+				
+				.chat-bubble i {
+					color: white;
+					font-size: 24px;
+				}
+				
+				.typing-indicator {
+					background-color: #f1f0f0;
+					padding: 8px 15px;
+					border-radius: 20px;
+					margin-bottom: 10px;
+					width: 50px;
+					float: left;
+					clear: both;
+					display: none;
+				}
+				
+				.typing-indicator span {
+					height: 8px;
+					width: 8px;
+					background-color: #666;
+					display: inline-block;
+					border-radius: 50%;
+					animation: typing 1s infinite ease-in-out;
+					margin-right: 4px;
+				}
+				
+				.typing-indicator span:nth-child(2) {
+					animation-delay: 0.2s;
+				}
+				
+				.typing-indicator span:nth-child(3) {
+					animation-delay: 0.4s;
+					margin-right: 0;
+				}
+				
+				@keyframes typing {
+					0% { transform: translateY(0); }
+					50% { transform: translateY(-5px); }
+					100% { transform: translateY(0); }
+				}
+				
+				.clearfix::after {
+					content: "";
+					clear: both;
+					display: table;
+				}
+				
+				.option-link {
+					display: block;
+					background-color: #f0f7ff;
+					border: 1px solid #cce4ff;
+					border-radius: 8px;
+					padding: 8px 12px;
+					margin: 6px 0;
+					color: #4a86e8;
+					text-decoration: none;
+					cursor: pointer;
+					width: 95%;
+					box-sizing: border-box;
+					transition: all 0.2s ease;
+				}
+				
+				.option-link:hover {
+					background-color: #e0f0ff;
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+					transform: translateY(-1px);
+				}
+				
+				.button-option {
+					display: inline-block;
+					background-color: #f0f7ff;
+					border: 1px solid #cce4ff;
+					border-radius: 20px;
+					padding: 8px 16px;
+					margin: 6px 8px 6px 0;
+					color: #4a86e8;
+					text-decoration: none;
+					cursor: pointer;
+					transition: all 0.2s ease;
+				}
+				
+				.button-option:hover {
+					background-color: #e0f0ff;
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				}
+				
+				.step-title {
+					font-weight: bold;
+					margin-bottom: 8px;
+					color: #333;
+				}
+				
+				.input-field {
+					display: block;
+					width: 95%;
+					padding: 8px 12px;
+					margin: 6px 0;
+					border: 1px solid #cce4ff;
+					border-radius: 8px;
+					font-family: inherit;
+					box-sizing: border-box;
+				}
+				
+				.input-field::placeholder {
+					color: #aaa;
+				}
+				
+				.input-label {
+					display: block;
+					margin: 4px 0;
+					color: #555;
+				}
+				
+				.note-text {
+					font-size: 0.9em;
+					color: #666;
+					font-style: italic;
+					margin-top: 8px;
+					display: block;
+				}
+				
+				hr.divider {
+					border: 0;
+					height: 1px;
+					background-color: #e0e0e0;
+					margin: 15px 0;
+				}
+			</style>
+			<div class="chat-bubble" id="chat-bubble">
+				<i>💬</i>
+			</div>
+			
+			<!-- Chat container -->
+			<div class="chat-container" id="chat-container">
+				<div class="chat-header" id="chat-header">
+					<span>Chat with Us</span>
+					<span id="close-chat" style="cursor: pointer;">✖</span>
+				</div>
+				<div class="chat-box" id="chat-box">
+					<!-- Chat messages will appear here -->
+					<div class="clearfix"></div>
+					<div class="typing-indicator" id="typing-indicator">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="chat-input" id="chat-input">
+					<input type="text" id="user-input" placeholder="Type your message...">
+					<button id="send-btn">Send</button>
+				</div>
+			</div>
 		
+			<script>
+				// Sample responses for common queries
+				const responses = {
+					// General responses
+					"hello": "Hello! How can I assist you today?",
+					"hi": "Hi there! How can I help you?",
+					"hey": "Hey! What can I do for you today?",
+					"how are you": "I'm doing great, thanks for asking! How can I help you?",
+					"who are you": "I'm TL Technologies' virtual assistant, designed to help with your questions!",
+					"what do you do": "I can answer questions about our products, services, pricing, cookie policy, and more. What would you like to know?",
+					"pricing": "Our pricing starts at $29/month for the basic plan. Would you like more information about our different plans?",
+					"contact": "You can reach our support team at sangig@tltechnologies.net or call/WhatsApp us at +91 90614 32814 during business hours.",
+					"hours": "Our business hours are Monday to Friday, 9am to 5pm IST.",
+					"location": "Our main office is located in India. You can visit our website at https://www.tltechnologies.net for more details.",
+					"products": "We offer a range of technology solutions including web development, mobile apps, and cloud services. Which one would you like to know more about?",
+					"services": "Our services include web development, mobile app development, cloud solutions, and IT consulting. Would you like specific information about any of these?",
+					"thanks": "You're welcome! Is there anything else I can help you with?",
+					"thank you": "You're welcome! Feel free to chat again if you have more questions.",
+					"bye": "Thank you for chatting with us! Have a great day!",
+					"goodbye": "Goodbye! Feel free to return if you have more questions.",
+					
+				
+					
+					// Contact information
+					"email": "You can email us at sangig@tltechnologies.net",
+					"phone": "You can call or WhatsApp us at +91 90614 32814",
+					"website": "Our website is https://www.tltechnologies.net",
+					"company name": "Our company name is TL Technologies Pvt Ltd",
+					
+					// Default response
+					"default": "I'm not sure I understand. For any questions or inquiries, please call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net. Would you like to know more about our services?"
+				};
+				
+				// Questionnaire flow with updated format
+				const questionnaireFlow = {
+					"welcome": {
+						"question": "👋 Hello and welcome to <strong>TL Technologies Pvt. Ltd.</strong><br>We build smart websites, apps, and digital tools that grow your business.<br>Would you like to get started?",
+						"options": ["Yes", "No, just browsing"],
+						"style": "buttons" // Using button style for Yes/No
+					},
+					"step1": {
+						"title": "### 🎯 Step 1: What are you looking for?",
+						"question": "🔍 Searching for the right solution? Here's what we offer — and that's just the beginning.<br>✨ Explore more: <a href='https://connect.tltechnologies.net/' target='_blank'>https://connect.tltechnologies.net/</a>",
+						"options": [
+							"🌐 Website Development|https://connect.tltechnologies.net/",  
+							"📲 Mobile App Development|https://connect.tltechnologies.net/",  
+							"🛍️ E-commerce Setup|https://connect.tltechnologies.net/",  
+							"📈 Digital Marketing / SEO|https://connect.tltechnologies.net/",  
+							"📅 Appointment/Booking System (Slotize)|https://connect.tltechnologies.net/",  
+							"📋 Event Registration / WhatsApp Automation (EventSnap)|https://connect.tltechnologies.net/",  
+							"🧾 Payslip Generator / Payroll System (TL PaySlip)|https://connect.tltechnologies.net/",  
+							"🎨 Branding & Design (Starting at $50 / ₹4,500)|https://connect.tltechnologies.net/",
+							"📦 Product Packaging / Label Design|https://connect.tltechnologies.net/",  
+							"❓ Something Else|https://connect.tltechnologies.net/"
+						],
+						"note": "*From business cards to billboard posters — elevate your brand presence with us.*",
+						"noteFor": "🎨 Branding & Design"
+					},
+					"final": {
+						"title": "### ✅ Final Step",
+						"question": "🔒 Your privacy matters to us — all your data is handled securely.<br>Would you like to schedule a <strong>free consultation</strong> with our expert team?",
+						"options": ["📞 Yes – Book Now", "⏳ Not Now", "📱 Something Else?"],
+						"style": "buttons" // Using button style for options
+					}
+				};
+		
+				document.addEventListener('DOMContentLoaded', function() {
+					const chatBubble = document.getElementById('chat-bubble');
+					const chatContainer = document.getElementById('chat-container');
+					const chatHeader = document.getElementById('chat-header');
+					const chatBox = document.getElementById('chat-box');
+					const chatInput = document.getElementById('chat-input');
+					const userInputField = document.getElementById('user-input');
+					const sendButton = document.getElementById('send-btn');
+					const closeChat = document.getElementById('close-chat');
+					const typingIndicator = document.getElementById('typing-indicator');
+					
+					// User session data
+					let userSession = {
+						currentStep: "welcome",
+						answers: {},
+						complete: false
+					};
+					
+					// Start chat automatically when page loads
+					startChat();
+					
+					// Function to start the chat
+					function startChat() {
+						chatContainer.style.display = 'block';
+						
+						// Start the questionnaire flow
+						setTimeout(function() {
+							showTypingIndicator();
+							
+							setTimeout(function() {
+								hideTypingIndicator();
+								displayQuestion("welcome");
+							}, 1500);
+						}, 1000);
+					}
+					
+					// Show chat bubble if chat is closed
+					closeChat.addEventListener('click', function() {
+						chatContainer.style.display = 'none';
+						chatBubble.style.display = 'flex';
+					});
+					
+					// Reopen chat when bubble is clicked
+					chatBubble.addEventListener('click', function() {
+						chatBubble.style.display = 'none';
+						chatContainer.style.display = 'block';
+						userInputField.focus();
+					});
+					
+					// Send message when Send button is clicked
+					sendButton.addEventListener('click', sendMessage);
+					
+					// Send message when Enter key is pressed
+					userInputField.addEventListener('keypress', function(e) {
+						if (e.key === 'Enter') {
+							sendMessage();
+						}
+					});
+					
+					function sendMessage() {
+						const userMessage = userInputField.value.trim();
+						if (userMessage === '') return;
+						
+						// Add user message to chat
+						addUserMessage(userMessage);
+						userInputField.value = '';
+						
+						// Show typing indicator
+						showTypingIndicator();
+						
+						// Process the user message and respond after a delay
+						setTimeout(function() {
+							hideTypingIndicator();
+							respondToUser(userMessage);
+						}, 1000);
+					}
+					
+					function addUserMessage(message) {
+						const messageDiv = document.createElement('div');
+						messageDiv.className = 'message user-message';
+						messageDiv.textContent = message;
+						chatBox.appendChild(messageDiv);
+						addClearfix();
+						chatBox.scrollTop = chatBox.scrollHeight;
+					}
+					
+					function addBotMessage(message) {
+						const messageDiv = document.createElement('div');
+						messageDiv.className = 'message bot-message';
+						messageDiv.innerHTML = message;
+						chatBox.appendChild(messageDiv);
+						addClearfix();
+						chatBox.scrollTop = chatBox.scrollHeight;
+					}
+					
+					function addClearfix() {
+						const clearfix = document.createElement('div');
+						clearfix.className = 'clearfix';
+						chatBox.appendChild(clearfix);
+					}
+					
+					function addDivider() {
+						const divider = document.createElement('hr');
+						divider.className = 'divider';
+						chatBox.appendChild(divider);
+						chatBox.scrollTop = chatBox.scrollHeight;
+					}
+					
+					function showTypingIndicator() {
+						typingIndicator.style.display = 'block';
+						chatBox.scrollTop = chatBox.scrollHeight;
+					}
+					
+					function hideTypingIndicator() {
+						typingIndicator.style.display = 'none';
+					}
+					
+					function respondToUser(userMessage) {
+						// Handle questionnaire flow
+						if (userSession.currentStep && questionnaireFlow[userSession.currentStep]) {
+							// Save the user's answer
+							userSession.answers[userSession.currentStep] = userMessage;
+							
+							// Special case for "No, just browsing" at welcome step
+							if (userSession.currentStep === "welcome" && userMessage.includes("No")) {
+								addBotMessage("No problem! Feel free to browse our services. If you have any questions or would like to learn more about what we offer, just ask! You can call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net.");
+								userSession.currentStep = null;
+								return;
+							}
+		
+							// Special case for final step options
+							if (userSession.currentStep === "final") {
+								if (userMessage.includes("Yes")) {
+									addBotMessage("Great! We'll set up a free consultation for you. Our team will contact you soon. In the meantime, if you have any questions, please call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net.");
+								} else if (userMessage.includes("Not Now")) {
+									addBotMessage("No problem! Feel free to reach out when you're ready. If you have any questions in the meantime, please call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net.");
+								} else {
+									addBotMessage("Thank you for your interest! For any other inquiries, please call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net.");
+								}
+								userSession.currentStep = null;
+								userSession.complete = true;
+								return;
+							}
+							
+							// Determine the next step
+							const nextStep = getNextStep(userSession.currentStep);
+							userSession.currentStep = nextStep;
+							
+							// If we have a next step, ask the next question
+							if (nextStep && questionnaireFlow[nextStep]) {
+								displayQuestion(nextStep);
+							} else if (nextStep === "completed") {
+								// Questionnaire completed
+								userSession.complete = true;
+								addBotMessage("Thank you for your interest! Our team will review your information and get back to you soon. For immediate assistance, please call or WhatsApp us at +91 90614 32814 or email us at sangig@tltechnologies.net.");
+							}
+						} else {
+							// If not in questionnaire flow or questionnaire completed, use regular response system
+							// Convert user message to lowercase for matching
+							const lowerCaseMessage = userMessage.toLowerCase();
+							
+							// Check for matching responses
+							let botResponse = null;
+							
+							// Check for exact matches first
+							if (responses[lowerCaseMessage]) {
+								botResponse = responses[lowerCaseMessage];
+							} else {
+								// Check for partial matches
+								for (const key in responses) {
+									if (lowerCaseMessage.includes(key)) {
+										botResponse = responses[key];
+										break;
+									}
+								}
+								
+								// If no matches found, use default response
+								if (!botResponse) {
+									botResponse = responses["default"];
+								}
+							}
+							
+							// Add bot response to chat
+							addBotMessage(botResponse);
+						}
+					}
+					
+					function getNextStep(currentStep) {
+						// Define the flow order
+						const flowOrder = ["welcome", "step1", "final", "completed"];
+						
+						// Get the index of the current step
+						const currentIndex = flowOrder.indexOf(currentStep);
+						
+						// Return the next step if available, or null if at the end
+						if (currentIndex < flowOrder.length - 1) {
+							return flowOrder[currentIndex + 1];
+						}
+						
+						return null;
+					}
+					
+					function displayQuestion(step) {
+						const questionData = questionnaireFlow[step];
+						let questionHTML = "";
+						
+						// Add a divider before each step except the first
+						if (step !== "welcome") {
+							addDivider();
+						}
+						
+						// Add step title if available
+						if (questionData.title) {
+							questionHTML += `<div class="step-title">${questionData.title.replace(/###/g, '')}</div>`;
+						}
+						
+						// Add question if available
+						if (questionData.question) {
+							questionHTML += `${questionData.question}<br><br>`;
+						}
+						
+						// Add options if available
+						if (questionData.options) {
+							if (questionData.style === "buttons") {
+								// Button style for Yes/No options
+								questionData.options.forEach(option => {
+									questionHTML += `<a href="#" class="button-option">${option}</a> `;
+								});
+							} else {
+								// List style for other options
+								questionData.options.forEach(option => {
+									// Check if the option contains a URL (for step1)
+									if (option.includes('|')) {
+										const [optionText, optionUrl] = option.split('|');
+										
+										// Add note for Branding & Design if applicable
+										const noteNeeded = questionData.noteFor && optionText.includes(questionData.noteFor);
+										
+										// Create a link that both navigates to URL and selects the option
+										questionHTML += `<a href="${optionUrl}" class="option-link" data-text="${optionText}" target="_blank">${optionText}</a>`;
+										
+										// Add the note if this is the right option
+										if (noteNeeded) {
+											questionHTML += `<span class="note-text">${questionData.note}</span>`;
+										}
+									} else {
+										questionHTML += `<a href="#" class="option-link">${option}</a>`;
+									}
+								});
+							}
+						}
+						
+						// Display the question
+						addBotMessage(questionHTML);
+						
+						// Add event listeners to option links and buttons
+						setTimeout(() => {
+							document.querySelectorAll('.option-link, .button-option').forEach(link => {
+								link.addEventListener('click', function(e) {
+									// Don't prevent default for links with URLs (they should navigate)
+									if (!this.hasAttribute('data-text')) {
+										e.preventDefault();
+										userInputField.value = this.textContent;
+									} else {
+										// For links with URLs, use the data-text attribute
+										userInputField.value = this.getAttribute('data-text');
+									}
+									sendButton.click();
+								});
+							});
+						}, 100);
+					}
+				});
+			</script>
 		</div>
 
 		<a class="style-switcher-open-loader" href="#" data-base-path="" data-skin-src="master/less/skin-business-consulting-3.less" data-bs-toggle="tooltip" data-bs-animation="false" data-bs-placement="right" title="Style Switcher" aria-label="Style Switcher"><i class="fas fa-cogs"></i><div class="style-switcher-tooltip"><strong>Style Switcher</strong><p>Check out different color options and styles.</p></div></a>
