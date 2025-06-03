@@ -393,7 +393,12 @@
 /* Add smaller screen size first */
 @media (min-width: 992px) {
 		.custom-big-font-size-1 {
-				font-size: 4rem !important;
+				font-size: 3rem !important;
+		}
+}
+@media (width: 320px) {
+		.custom-big-font-size-1 {
+				font-size: 2.8rem !important;
 		}
 }
 
@@ -417,6 +422,6 @@
 
 @media (min-width: 1844px) {
 		.custom-big-font-size-1 {
-				font-size: 7rem !important;
+				font-size: 6rem !important;
 		}
 }
