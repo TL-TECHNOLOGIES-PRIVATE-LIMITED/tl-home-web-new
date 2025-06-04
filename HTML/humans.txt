@@ -1,26 +1,35 @@
+/* TEAM */
+Company Name: TL TECHNOLOGIES PVT. LTD.
+Location: Trivandrum / Cochin, Kerala, India
+
+CEO: Sangeetha C Gopalakrishnan (Sangi)
+Contact: Sangig@tltechnologies.net
+LinkedIn: https://www.linkedin.com/in/sangeethacg/
+
+Front-End Developer: Dasarath K N 
+Back-End Developer: Dasarath K N  
+Graphic Designer: Heba  
+
+
 /* THANKS */
-To our dedicated TL Technologies team members for your hard work and commitment to innovation.
+Thanks to our amazing team and partners for making this site possible.
 
 /* CONNECT WITH US */
-Website: https://www.tltechnologies.net
-Contact Portal: https://connect.tltechnologies.net
+Website: https://www.tltechnologies.net/
+Social: https://www.linkedin.com/company/tltechnologiespvtltd
+Email: sangig@tltechnologies.net
 
-/* TEAM */
-CEO: Sangeetha C Gopalakrishnan (Sangi)  
-Email: sangig@tltechnologies.net  
-Location: Trivandrum, India / USA  
+/* TECHNOLOGIES USED */
+- Front-End: [ HTML, CSS, JavaScript]
+- Back-End: [Node.js, Express.js]
+- Database: [ MS SQL ]
+- Hosting: [SmaterASP,Vercel,Render]
 
-Full Stack Developers:  
-- Murthasa Ali  
-- Gurudas  
-- Thasleem  
+/* SITE INFO */
+Site Url: https://www.tltechnologies.net/
+Last Updated: May 27, 2025
+Version: V.2025-1
 
-HR Administrator: Silpa Binny  
-
-Graphic Designer: Venkat  
-
-/* MISSION */
-At TL Technologies, we strive to innovate, transform, and enable our clients to succeed through cutting-edge digital solutions and exceptional teamwork.
-
-/* COPYRIGHT */
-© TL Technologies. All Rights Reserved.
+/* WHERE TO FIND US */
+Office Address: Trivandrum and Cochin, Kerala, India (Refine with specific addresses if desired)
+Phone Number: +91 9061432814
