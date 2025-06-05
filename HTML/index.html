@@ -298,8 +298,7 @@
 						<div class="header-column justify-content-end w-100">
 							<div class="header-row">
 								<div class="header-nav header-nav-links order-2 order-lg-1">
-									<div
-										class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1">
+									<div class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1">
 										<nav class="collapse">
 											<ul class="nav nav-pills" id="mainNav">
 												<li>
@@ -361,7 +360,7 @@
 
 												</li>
 												<li class="d-lg-none ">
-													<a class="nav-link text-4-5 text-md-5" href="contact.html"
+													<a class="nav-link text-4-5 text-md-4.5" href="contact.html"
 														rel="noopener noreferrer">
 														Connect With Us
 													</a>
@@ -389,7 +388,32 @@
 				</div>
 			</div>
 		</header>
-
+<style>
+@media (max-width: 1199px) {
+    .header-nav-main .nav-link {
+        font-size: 15px !important; /* Slightly smaller font */
+        padding-left: 0.4rem !important;
+        padding-right: 0.4rem !important;
+    }
+    .header-nav-links {
+        margin-left: 0;
+    }
+    .header-container.container {
+        padding-left: 8px;
+        padding-right: 8px;
+        height: 90px !important; /* Reduced container height */
+    }
+    .btn.custom-btn-style-1 {
+        padding-left: 0.6rem !important;
+        padding-right: 0.6rem !important;
+        font-size: 0.95rem !important;
+    }
+    .header-logo img {
+        height: 45px !important; /* Smaller logo for medium screens */
+        width: auto !important;
+    }
+}
+</style>
 		<div role="main" class="main">
 
 			<section class="section section-height-3 section-with-shape-divider position-relative border-0 m-0"
